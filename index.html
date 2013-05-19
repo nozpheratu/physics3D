@@ -51,6 +51,9 @@
 		<script type="text/javascript" src="three.js"></script>
 		<script type="text/javascript" src="stats.min.js"></script>
 		<script type="text/javascript" src="dat.gui.min.js"></script>
+		<script type="text/javascript" src="Tween.js"></script>
+		<script type="text/javascript" src="Sparks.js"></script>
+		<script type="text/javascript" src="jetpackFlame.js"></script>
 	</head>
 	<body>
 		<canvas id="canvas"  style="display:none"></canvas>
@@ -206,10 +209,15 @@
 			    
 			});
 
+			flame = new JetpackFlame();
+			scene.add(flame.system)
+
 		}
-		
+
 		var c = 0;
 		var camOffset = {x:0,y:0};
+		var flameIntensity = 0;
+		var lastGravity = 100;	
 		// draw!
 		function animate() 
 		{
@@ -225,6 +233,30 @@
 			camera.position.z += ((settings.zoom) - camera.position.z) * .08;
 			camOffset.x = Math.sin(c/20) * 8 - 4 + Math.random() * 6;
 			camOffset.y = Math.cos(c/30) * 6 - 3 + Math.random() * 2;
+
+			if(flame)
+			{
+				if(impactWrapper.player.rotation.y < 0)
+				flame.emitterpos.x = impactWrapper.player.position.x + 3;
+				else 	flame.emitterpos.x = impactWrapper.player.position.x - 3;
+
+				flame.emitterpos.y = impactWrapper.player.position.y - 5;
+
+				//flame.y = 500;
+				//flame.x = impactWrapper.player.position.x;
+
+				if( ig.input.state('jump') ) {
+					flame.counter.rate = 200;
+					flameIntensity = 1 + (Math.sin(c) + 2);
+					flameLight.position = impactWrapper.player.position;
+				} else
+				{
+					flameIntensity = 0;
+					flame.counter.rate = 0;
+				}
+				flameLight.intensity += ((flameIntensity) - flameLight.intensity) * .09;
+			}
+
 			render();
 			stats.update();
 
@@ -232,6 +264,10 @@
 
 		function render()
 		{
+			flame.system.geometry.verticesNeedUpdate = true;
+			flame.attributes.size.needsUpdate = true;
+			flame.attributes.pcolor.needsUpdate = true;
+
 			renderer.render(scene, camera);
 		}
 
