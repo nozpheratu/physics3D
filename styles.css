@@ -1,0 +1,20 @@
+html,body 
+{
+	background-color: #333;
+	color: #fff;
+	font-family: helvetica, arial, sans-serif;
+	margin: 0;
+	padding: 1em;
+	font-size: 12pt;
+}		
+#canvas 
+{
+	float:right;
+}
+#container 
+{
+	width:1000px;
+	height:480px;
+	text-align:left; 
+	background-color:#000;
+}
