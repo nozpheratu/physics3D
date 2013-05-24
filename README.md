@@ -9,7 +9,7 @@ The main/non-core (files to pay attention to) files for this demo are:
 All credit for this demo goes to **Christian Östman** and **Richard Åström**, see http://asmallgame.com/labsopen/webgl_impact/ for a more functional demo.
 
 #Setup#
-Some files were ommited for the purposes of making this code public. To make this demo work you'll need to add the following folders/files:
+This demo won't work out of the box as the core Impact files were ommited for the purposes of making this code public. To make this demo work you'll need to add the following folders/files:
 * lib/impact/
 * optional impact files:
   * lib/weltmeister/
