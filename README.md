@@ -4,6 +4,6 @@ The main/non-core (files to pay attention to) files for this demo are:
 * [lib/three.js/jetpackFlame.js](lib/three.js/jetpackFlame.js) - jetpack effects
 * [lib/impact-wrapper.js](lib/impact-wrapper.js) - generates and stores the required 3D meshes for all Impact entities
 
-All credit for this demo goes to **Christian Östman** and **Richard Åström**.
+All credit for this demo goes to **Christian Östman** and **Richard Åström**, see http://impactjs.com/demos/physics/ for a more functional demo.
 
 
