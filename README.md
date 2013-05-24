@@ -1,5 +1,11 @@
 #WebGL - Three.js + impactJS#
 
+Note: This demo was updated to use three.js(v2013 04 17 - r58), the demo featured [here](http://asmallgame.com/labsopen/webgl_impact/) uses an earlier version.
+
+***
+
+*To my inexperienced understanding:*
+
 The main/non-core (files to pay attention to) files for this demo are:
 
 * [lib/three.js/main.js](lib/three.js/main.js) - orchestrates all the three.js stuff and bridges the gap between Impact + three.js
