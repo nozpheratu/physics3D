@@ -12,7 +12,7 @@ The main/non-core (files to pay attention to) files for this demo are:
 * [lib/three.js/jetpackFlame.js](lib/three.js/jetpackFlame.js) - jetpack effects
 * [lib/impact-wrapper.js](lib/impact-wrapper.js) - generates and stores the required 3D meshes for all Impact entities
 
-All credit for this demo goes to **Christian Östman** and **Richard Åström**, see http://asmallgame.co/labsopen/webgl_impact/ for a more functional demo.
+All credit for this demo goes to **Christian Östman** and **Richard Åström**, see http://asmallgame.co/labsopen/webgl_impact/ for a more functional demo. Will remove or transfer ownership of this repo upon request.
 
 #Setup#
 This demo won't work out of the box as the core Impact files were ommited for the purposes of making this code public. To make this demo work you'll need to add the following folders/files:
